@@ -1,0 +1,9 @@
+app
+    components
+    features
+        feature-1
+            redux
+            pages
+            components
+
+            
