@@ -42,8 +42,6 @@ HTTP反向代理 - Nginx <br>
 ```
 superproject
 	|
-	+---config
-	|
 	+---apps
 	|	|
 	|	+---__react_isomorphic_tpl
