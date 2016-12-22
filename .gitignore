@@ -1,6 +1,7 @@
 # super project
 node_modules/
 *.log
+dist
 
 
 # apps
