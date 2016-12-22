@@ -16,7 +16,8 @@ export default class Layout extends Component {
             {text: 'Home', href: '/profile/home'},
             {text: 'About', href: '/profile/about'},
             {text: 'Past', href: '/profile/past'},
-            {text: 'Demo', href: '/profile/demo'}
+            {text: 'Demo', href: '/profile/demo'},
+            {text: 'Login', href: '/account/login'}
         ]
 
         return (

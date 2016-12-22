@@ -100,6 +100,7 @@ export function reducer (state, action) {
             console.log(action)
             return {
                 ...state,
+                ...action.data,
                 loading: false
             }
         case LOGIN_FAIL:

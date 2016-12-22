@@ -19,7 +19,9 @@ export const Auth = (role = ROLE_USER) => (AuthWrappedComponent) => {
         }
 
         componentWillMount () {
-
+            if (this.props.token === '') {
+                this.props.router.push('/profile/about')
+            }
         }
 
         componentWillReceiveProps (nextProps) {
@@ -36,12 +38,13 @@ export const Auth = (role = ROLE_USER) => (AuthWrappedComponent) => {
     }
 
 
-    const mapStateToProps = (state) => ({
-        token: state.auth.token,
-        userName: state.auth.userName,
-        isAuthenticated: state.auth.isAuthenticated
-    })
-
+    function mapStateToProps (state) {
+        return {
+            token: state.account.token,
+            role: state.account.role,
+            userName: state.account.userName
+        }
+    }
 
     return Auth
 }

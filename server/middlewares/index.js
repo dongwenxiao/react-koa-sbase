@@ -1,10 +1,7 @@
-const path = require('path')
-const fs = require('fs')
-
-module.exports = function(app) {
+module.exports = function (app) {
     require('./onerror')(app)
-    
-    app.use(require('./response-time'))    
+
+    app.use(require('./response-time'))
     app.use(require('./logger'))
     app.use(require('./session'))
     // app.use(require('./auth-simple'))
