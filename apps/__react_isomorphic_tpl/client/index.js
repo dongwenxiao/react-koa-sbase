@@ -5,28 +5,31 @@ import 'babel-polyfill'
 
 import React from 'react'
 import { render } from 'react-dom'
+// TODO: 在生成环境移除这个组件
 import { AppContainer as HotContainer } from 'react-hot-loader'
 import Root from './containers/Root'
 import { browserHistory, match } from 'react-router'
-import { syncHistoryWithStore, push } from 'react-router-redux'
+import { syncHistoryWithStore } from 'react-router-redux'
 
-// config
 import routes from './common/routeConfig'
 import configStore from './common/configStore'
 
-// add js ext
+// 添加js原生扩展
 require('../../../ext/index')
 
+// 获取server端写的默认state
 const store = configStore(window.__REDUX_STATE__)
-// setTimeout(()=>{
-//     console.log('!!!!!')
-//     store.dispatch(push('/profile/about'))
-// },3000)
+
+// 用react-router-redux增强history
 const history = syncHistoryWithStore(browserHistory, store)
 
 // 客户端渲染的时候也需要匹配路由
 // 否则会提示server render 和 client render不匹配
-match({ routes, location }, () => {
+match({ history, routes }, (err, redirectLocation, renderProps) => {
+
+    if (err) {
+        console.log(err.stack)
+    }
 
     /*
     render(
@@ -41,7 +44,7 @@ match({ routes, location }, () => {
     const root = document.getElementById('root')
     render(
         <HotContainer>
-            <Root store={store} history={history}></Root>
+            <Root {...{store, history, routes}} ></Root>
         </HotContainer>,
         root
     )

@@ -1,0 +1,14 @@
+# super project
+node_modules/
+*.log
+
+
+# apps
+#apps/[^.]*
+#apps/!__react_isomorphic_tpl
+
+
+# victor's personal code
+victor
+.DS_Store
+.vscode

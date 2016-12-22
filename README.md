@@ -2,6 +2,13 @@
 
 ## 运行
 
+建议：中国用户建议使用cnpm加速下载依赖
+```
+npm i cnpm -g
+```
+
+如果安装了cnpm可以把👇的```npm i```改成```cnpm i```执行
+
 ```
 cd superproject && npm i
 cd apps/__react_isomorphic_tpl && npm i
