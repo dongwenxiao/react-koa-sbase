@@ -11,7 +11,6 @@ npm i cnpm -g
 
 ```
 cd superproject && npm i
-cd apps/__react_isomorphic_tpl && npm i
 npm start
 ```
 
