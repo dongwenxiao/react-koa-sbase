@@ -51,47 +51,15 @@ superproject
 	|
 	+---apps
 	|	|
-	|	+---__react_isomorphic_tpl
+	|	+---app
 	|		|
-	|		+---client
-	|		|   |
-	|		|   +---common
-	|		|   |
-	|		|   +---components
-	|		|   |
-	|		|   +---containers
-	|		|   |
-	|		|   +---features
-	|		|       |
-	|		|       +---common
-	|		|       |
-	|		|       +---account
-	|		|       |
-	|		|       +---profile
-	|		|           |
-	|		|           +---redux
-	|		|           |
-	|		|           +---LoginPage
-	|		|
-	|		+---server
-	|		|
-	|		+---logs
-	|		|
-	|		+---webpack
-	|		|
-	|		+---dist
-	|		|
-	|		+---index.html
-	|		|
-	|		+---package.json
+	|		+---feature
+	|			|
+	|			+---client
+	|			|
+	|			+---client
 	|
 	+---server
-	|	|
-	|	+---config
-	|	|
-	|	+---enum
-	|	|
-	|	+---global
 	|	|
 	|	+---middlewares
 	|	|
