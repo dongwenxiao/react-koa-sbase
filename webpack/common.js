@@ -15,10 +15,10 @@ const rules = [
         loader: 'json-loader'
     }, {
         test: /\.css$/,
-        loader: 'wapper-css-loader?length=4!postcss-loader'
+        loader: 'wrapper-css-loader?length=4!postcss-loader'
     }, {
         test: /\.gcss$/,
-        loader: 'wapper-css-loader?length=3&wapper=false!postcss-loader'
+        loader: 'wrapper-css-loader?length=3&wapper=false!postcss-loader'
     }, {
         test: /\.png$/, loader: 'url-loader?limit=100000'
     }, {
