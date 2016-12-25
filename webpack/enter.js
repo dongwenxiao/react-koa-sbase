@@ -10,6 +10,7 @@ const CLIENT_DEV_PORT = 3001
 // dev 开发， dist 部署
 const env = argv.env
 
+
 // 描述场景
 // client 客户端， server 服务端
 const stage = argv.stage
@@ -34,7 +35,7 @@ const factoryConfig = (config) => {
     return config
 }
 
-module.exports = (config) => {
+const run = (config) => {
 
     // 程序启动路径，作为查找文件的基础
     let appPath = process.cwd()
@@ -122,3 +123,5 @@ module.exports = (config) => {
     }
 
 }
+
+run()

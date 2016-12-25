@@ -1,5 +1,7 @@
 const webpack = require('webpack')
 const autoprefixer = require('autoprefixer')
+const path = require('path')
+const appPath = process.cwd()
 
 // 执行顺序，从右到左
 const rules = [
@@ -10,7 +12,7 @@ const rules = [
         }]
     }, {
         test: /\.json$/,
-        loader: 'json'
+        loader: 'json-loader'
     }, {
         test: /\.css$/,
         loader: 'wapper-css-loader?length=4!postcss-loader'
@@ -36,14 +38,24 @@ const plugins = [
                     // postcssImport({
                     //     addDependencyTo: webpack
                     // }),
-                    autoprefixer({browsers: ['last 2 versions']})
+                    autoprefixer({ browsers: ['last 2 versions'] })
                 ]
             }
         }
     })
 ]
 
+const resolve = {
+    modules: [
+        'node_modules',
+        path.resolve(appPath, './base/client/containers'),
+        path.resolve(appPath, './base/server/modules')
+    ],
+    extensions: ['.js', '.jsx', '.json', '.css', '.gcss']
+}
+
 module.exports = {
     rules,
-    plugins
+    plugins,
+    resolve
 }

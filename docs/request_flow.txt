@@ -1,0 +1,6 @@
+
+client
+    |
+  https
+    |
+server[koa -> middlewares(公共) -> apps -> middlewares(应用自有)[auth] -> routes -> middlewares(路由自有) -> logic -> db] 

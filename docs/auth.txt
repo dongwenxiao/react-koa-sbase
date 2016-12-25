@@ -1,0 +1,22 @@
+权限管理相关对象
+
+
+User 用户
+Role 角色
+Privilege 特权
+Resource 资源
+
+
+1.一个用户可以有多个角色，使用时权限合并判断
+2.一个角色对应一个特权
+3.一个特权可以包括多资源[或URL]的CRUD权限
+
+
+权限整体贯穿apps
+在每个app中以中间件的形式使用，自动读取当前注册的路由（api-plus和apps都可以这个逻辑），生成页面来控制权限选择，数据存储到db中
+
+client
+    |
+  https
+    |
+server[koa -> middlewares -> apps -> middlewares[auth权限管理所处位置] -> routes -> middlewares -> logic] 

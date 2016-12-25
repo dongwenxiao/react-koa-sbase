@@ -13,18 +13,17 @@ const banner = (function () {
     ].join('\n')
 })()*/
 
-// var autoprefixer = require('autoprefixer')
+
 
 module.exports = (appPath, port) => ({
     target: 'web',
     devtool: 'source-map',
     entry: [
-        path.resolve(appPath, './client/index.js')
+        path.resolve(appPath, './base/client/index.js')
     ],
     output: {
         filename: 'client.js',
         chunkFilename: '[id].[name].chunk.js',
-        // path: appPath + '/server/public/client',
         path: appPath + '/dist/public/client',
         publicPath: '/client/' // TODO 改成静态第三方URL用于CDN部署 http://localhost:3000/
     },
@@ -53,5 +52,7 @@ module.exports = (appPath, port) => ({
             comments: false,
             sourceMap: true
         })
-    ]
+    ],
+    resolve: common.resolve
+    // externals: ["react", /^@angular\//],  尝试把react单独已js引用到html中，看看是否可以减小体积
 })

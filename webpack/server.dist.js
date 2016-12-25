@@ -20,10 +20,10 @@ module.exports = (appPath) => ({
     devtool: 'source-map',
     watch: false,
     entry: [
-        path.resolve(appPath, './server/server.js')
+        path.resolve(appPath, './base/server')
     ],
     output: {
-        filename: 'server.js',
+        filename: 'index.js',
         chunkFilename: '[id].chunk.js',
         path: appPath + '/dist/server',
         publicPath: '/dist/server/'
@@ -39,5 +39,6 @@ module.exports = (appPath) => ({
         }),
         ...common.plugins
     ],
-    externals: nodeModules()
+    externals: nodeModules(),
+    resolve: common.resolve
 })
