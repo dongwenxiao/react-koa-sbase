@@ -22,7 +22,7 @@ module.exports = (appPath) => ({
     watch: true,
     entry: [
         'webpack/hot/poll?1000',
-        path.resolve(appPath, './server/server.js')
+        path.resolve(appPath, './base/server')
     ],
     output: {
         filename: 'server.js',
