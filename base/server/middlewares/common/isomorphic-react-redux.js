@@ -83,9 +83,16 @@ module.exports = function (routes) {
             const store = configStore(memoryHistory)
             const history = syncHistoryWithStore(memoryHistory, store)
             const { redirectLocation, renderProps } = await asyncMatch({ history, routes, location: ctx.url })
+
+
             if (redirectLocation) {
                 ctx.redirect(redirectLocation.pathname + redirectLocation.search)
             } else if (renderProps) {
+
+                // console.log('===============renderProps 1')
+                // console.log(renderProps.components[0].test())
+                // console.log('===============renderProps 2')
+
                 await asyncStore(store, renderProps)
 
                 ctx.body = await renderHtml(

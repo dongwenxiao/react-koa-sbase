@@ -38,8 +38,17 @@ function handleIndexRoute (route) {
 }
 
 
+
 class App extends Component {
+
+    static sss = 'sss'
+
+    static test = (val = 'val') => {
+        App.sss + 'test xxxxxxxxxxxx ' + val
+    }
+
     render () {
+
         return (
             <div>
                 {this.props.children}
@@ -49,32 +58,12 @@ class App extends Component {
 }
 
 
-
 const routes = [{
     path: '/',
-    // component: App,
+    component: App,
     childRoutes: mountings.map((app) => (app.clientRouter))
 }]
 
 routes.forEach(handleIndexRoute)
 
 export default routes
-
-/*
-export default function (mountings) {
-    console.log('================mountings')
-    console.log(mountings)
-    let clientRouters = mountings.map((app) => {
-        console.log(app.clientRouter)
-        return app.clientRouter
-    })
-    console.log('================clientRouters')
-    console.log(clientRouters)
-    const routes = [{
-        path: '/',
-        childRoutes: clientRouters
-    }].forEach(handleIndexRoute)
-
-    return routes
-}
-*/

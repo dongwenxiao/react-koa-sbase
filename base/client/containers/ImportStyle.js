@@ -124,7 +124,6 @@ export const ImportStyleRoot = () => (StyleWrappedComponent) => {
 
     class ImportStyleRoot extends Component {
 
-
         constructor (props) {
             super(props)
 
@@ -186,5 +185,5 @@ const stylesHandleWapperCssLoader = (styles) => {
         return styles
     }
 
-    throw 'stylesHandleWapperCssLoader() styles type must be array or object'
+    throw new Error('stylesHandleWapperCssLoader() styles type must be array or object')
 }
