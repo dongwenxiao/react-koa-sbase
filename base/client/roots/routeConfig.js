@@ -39,28 +39,28 @@ function handleIndexRoute (route) {
 
 
 
-class App extends Component {
+// class App extends Component {
 
-    static sss = 'sss'
+//     static sss = 'sss'
 
-    static test = (val = 'val') => {
-        App.sss + 'test xxxxxxxxxxxx ' + val
-    }
+//     static test = (val = 'val') => {
+//         App.sss + 'test xxxxxxxxxxxx ' + val
+//     }
 
-    render () {
+//     render () {
 
-        return (
-            <div>
-                {this.props.children}
-            </div>
-        )
-    }
-}
+//         return (
+//             <div>
+//                 {this.props.children}
+//             </div>
+//         )
+//     }
+// }
 
 
 const routes = [{
     path: '/',
-    component: App,
+    // component: App,
     childRoutes: mountings.map((app) => (app.clientRouter))
 }]
 

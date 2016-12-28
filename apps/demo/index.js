@@ -1,47 +1,33 @@
 /*
-app 暴露挂载接口
+// 挂载feature
+// 每个feature都是一个对象，需要暴露如下接口：
 
-app url prefix
-clinet router[routes]
-server router[routes]
-
+{
+    server: {
+        router
+    },
+    client: {
+        redux: {
+            reducers,
+            initState
+        },
+        router
+    },
+    urlPrefix
+}
 */
 
-import {
-    clientRouter as helloworldClientRouter,
-    serverRouter as helloworldServerRouter,
-    featureUrlPerfix as helloworldUrlPerfix
-} from './helloworld'
+import client from './client'
+import server from './server'
 
-// 应用URL前缀
-const appUrlPrefix = 'demo'
-// const appUrlPrefix = ''
+// TODO  ./redux
+client.redux.store = {}
 
-// 客户端路由挂件
-const clientRouter = {
-    path: appUrlPrefix,
-    childRoutes: [
-        helloworldClientRouter
-    ]
-}
 
-// 服务端路由挂件
-const serverRouter = require('koa-router')()
-serverRouter.use(serverRouterPrefixHandle(helloworldUrlPerfix), helloworldServerRouter.routes(), helloworldServerRouter.allowedMethods())
-
-/**
- * 处理服务端路由规则，如果前面是空，则去掉斜杠 /
- *
- * @param {any} prefix
- * @returns
- */
-function serverRouterPrefixHandle (prefix) {
-    if (prefix === '') return prefix
-    else return '/' + prefix
-}
+const urlPrefix = 'demo'
 
 export {
-    appUrlPrefix,
-    clientRouter,
-    serverRouter
+    urlPrefix,
+    client,
+    server
 }

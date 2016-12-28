@@ -4,21 +4,21 @@ import rootReducer from './rootReducer'
 import { browserHistory } from 'react-router'
 import { routerMiddleware } from 'react-router-redux'
 
-
+// redux 配置中间件
 const middlewares = [
     thunk,
     routerMiddleware(browserHistory)
 ]
 
+// 添加开发者工具
 let devToolsExtension = (f) => f
-
 if (__CLIENT__) {
     if (window.devToolsExtension) {
         devToolsExtension = window.devToolsExtension()
     }
 }
 
-
+// 生产store
 export default function configStore (initialState) {
 
     const store = createStore(rootReducer, initialState, compose(

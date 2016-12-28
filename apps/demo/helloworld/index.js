@@ -3,16 +3,15 @@ featrue 暴露挂载接口
 */
 
 
-import { routes as clientRouter } from './client'
+import { router as clientRouter } from './client'
 import { router as serverRouter } from './server'
 
 // 功能URL前缀
-const featureUrlPerfix = 'helloworld'
-// const featureUrlPerfix = ''
-clientRouter.path = featureUrlPerfix
+const urlPerfix = 'helloworld'
+clientRouter.path = urlPerfix
 
 export {
-    featureUrlPerfix,
+    urlPerfix,
     clientRouter,
     serverRouter
 }

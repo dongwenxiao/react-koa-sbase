@@ -89,9 +89,9 @@ module.exports = function (routes) {
                 ctx.redirect(redirectLocation.pathname + redirectLocation.search)
             } else if (renderProps) {
 
-                // console.log('===============renderProps 1')
-                // console.log(renderProps.components[0].test())
-                // console.log('===============renderProps 2')
+                console.log('===============renderProps 1')
+                console.log(renderProps)
+                console.log('===============renderProps 2')
 
                 await asyncStore(store, renderProps)
 

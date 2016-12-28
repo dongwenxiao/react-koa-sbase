@@ -20,3 +20,6 @@ client
   https
     |
 server[koa -> middlewares -> apps -> middlewares[auth权限管理所处位置] -> routes -> middlewares -> logic] 
+
+
+程序寻找注册的server路由

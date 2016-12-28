@@ -18,7 +18,7 @@ const nodeModules = () => fs
 
 module.exports = (appPath) => ({
     target: 'async-node',
-    devtool: 'source-map',
+    devtool: 'cheap-eval-source-map',
     watch: true,
     entry: [
         'webpack/hot/poll?1000',

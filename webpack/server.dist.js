@@ -17,7 +17,7 @@ const nodeModules = () => fs
 
 module.exports = (appPath) => ({
     target: 'async-node',
-    devtool: 'source-map',
+    devtool: 'cheap-eval-source-map',
     watch: false,
     entry: [
         path.resolve(appPath, './base/server')
