@@ -24,7 +24,7 @@ npm start
 
 在浏览器打开：```http://localhost:3000```
 
-## 技术(计划使用)
+## 技术栈(计划使用)
 
 组件化 - React <br>
 状态管理 - Redux <br>
@@ -63,24 +63,40 @@ superproject
 	|		+---feature
 	|			|
 	|			+---client
+	|			|	|
+	|			|	+---redux
+	|			|	|
+	|			|	+---componets
 	|			|
-	|			+---client
+	|			+---server
 	|
-	+---server
-	|	|
-	|	+---middlewares
-	|	|
-	|	+---modules
-	|	|
-	|	+---public
-	|	|
-	|	+---app.js
-	|	|
-	|	+---server.js
-	|
-	+---ext
+	+---base
+	| 	|
+	| 	+---client
+	| 	|	|
+	| 	|	+---containers
+	| 	|	|
+	| 	|	+---roots
+	| 	|
+	| 	+---server
+	| 		|
+	| 		+---middlewares
+	| 		|
+	| 		+---modules
+	| 		|
+	| 		+---public
+	| 		|
+	| 		+---app.js
+	| 		|
+	| 		+---server.js
 	|
 	+---webpack
+	|
+	+---config
+	|
+	+---logs
+	|
+	+---dist
 	|
 	+---package.json
 
