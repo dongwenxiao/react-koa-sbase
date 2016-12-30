@@ -9,6 +9,7 @@ import { router as serverRouter } from './server'
 // 功能URL前缀
 const urlPerfix = 'helloworld'
 clientRouter.path = urlPerfix
+clientRouter.name = urlPerfix
 
 export {
     urlPerfix,

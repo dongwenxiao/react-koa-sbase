@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import mountings from '../../../mounting'
+// import React, { Component } from 'react'
+import { clients } from '../../../config/mounting'
 // import {router as subrouter} from '../../../apps/demo/helloworld/client'
 
 /**
@@ -38,7 +38,6 @@ function handleIndexRoute (route) {
 }
 
 
-
 // class App extends Component {
 
 //     static sss = 'sss'
@@ -57,13 +56,35 @@ function handleIndexRoute (route) {
 //     }
 // }
 
+let childRoutes = []
+// console.log('clients----------')
+// console.log(clients)
+for (let urlPrefix in clients) {
+    // console.log('urlPrefix----------')
+    // console.log(urlPrefix)
 
-const routes = [{
+    // console.log('<><><><><><><>')
+    // console.log(clients.hasOwnProperty(urlPrefix))
+
+    if (!clients.hasOwnProperty(urlPrefix)) continue
+
+    let client = clients[urlPrefix]
+    // console.log('client---------')
+    // console.log(client)
+    childRoutes.push(client.router)
+    // console.log('childRoutes---------')
+    // console.log(childRoutes)
+}
+
+const router = [{
     path: '/',
     // component: App,
-    childRoutes: mountings.map((app) => (app.clientRouter))
+    childRoutes
 }]
 
-routes.forEach(handleIndexRoute)
+// console.log('router----------')
+// console.log(router)
 
-export default routes
+router.forEach(handleIndexRoute)
+
+export default router

@@ -26,6 +26,10 @@ client.redux.store = {}
 
 const urlPrefix = 'demo'
 
+// 设置client router urlPrefix
+client.router.path = urlPrefix
+client.router.name = urlPrefix
+
 export {
     urlPrefix,
     client,
