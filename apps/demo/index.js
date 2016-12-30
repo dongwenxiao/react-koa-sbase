@@ -21,7 +21,7 @@ import client from './client'
 import server from './server'
 
 // TODO  ./redux
-client.redux.store = {}
+// client.redux.store = {}
 
 
 const urlPrefix = 'demo'

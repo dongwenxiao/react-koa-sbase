@@ -6,11 +6,11 @@ import { routerReducer } from 'react-router-redux'
 
 
 
-export default function factoryRootReducer (childReducer) {
+export default function factoryRootReducer (reducers) {
 
     const rootReducer = combineReducers({
         routing: routerReducer,
-        ...childReducer
+        ...reducers
         // home: homeReducer,
         // account: accountReducer
     })

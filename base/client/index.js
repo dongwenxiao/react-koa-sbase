@@ -17,22 +17,20 @@ import { Provider } from 'react-redux'
 // import { AppContainer as HotContainer } from 'react-hot-loader'
 // import Root from './containers/Root'
 import { Router, browserHistory, match } from 'react-router'
-// import { syncHistoryWithStore } from 'react-router-redux'
+import { syncHistoryWithStore } from 'react-router-redux'
 
-// import routes from './roots/routeConfig'
 import routes from './roots/router'
 
-// 添加js原生扩展
-// require('../../common/ext/index')
-
-// import factoryRootReducer from '../client/roots/factoryRootReducer'
-// import factoryConfigureStore from '../client/roots/factoryConfigureStore'
 import { createConfigureStore } from '../common'
 
 
+let configStore = createConfigureStore(window.location.pathname)
+const store = configStore(window.__REDUX_STATE__)
+
+
 // 用react-router-redux增强history
-// const history = syncHistoryWithStore(browserHistory, store)
-const history = browserHistory // 先测试这么用
+const history = syncHistoryWithStore(browserHistory, store)
+// const history = browserHistory // 先测试这么用
 
 // 客户端渲染的时候也需要匹配路由
 // 否则会提示server render 和 client render不匹配
@@ -42,7 +40,7 @@ match({ history, routes }, (err, redirectLocation, renderProps) => {
         console.log(err.stack)
     }
 
-    let configStore = createConfigureStore(window.location.pathname)
+    
 
     // 判断加载哪一个app的redux store
     // if (renderProps.routes[1] &&
@@ -58,7 +56,7 @@ match({ history, routes }, (err, redirectLocation, renderProps) => {
     function appRender (configStore) {
         // const configStore = require('./roots/configStore').default
         // 获取server端写的默认state
-        const store = configStore(window.__REDUX_STATE__)
+        
 
 
         render(

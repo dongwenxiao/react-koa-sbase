@@ -8,7 +8,6 @@
     },
     client: {
         redux: {
-            store,
             reducers
         },
         router

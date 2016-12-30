@@ -1,4 +1,4 @@
-import { clientRouter as helloworldRouter } from './helloworld'
+import { clientRouter as helloworldRouter, clientReducer as helloworldReducer } from './helloworld'
 
 // 客户端路由挂件
 export default {
@@ -9,7 +9,8 @@ export default {
         ]
     },
     redux: {
-        reducers: [], // TODO
-        initState: {}
+        reducers: [
+            helloworldReducer
+        ]
     }
 }
