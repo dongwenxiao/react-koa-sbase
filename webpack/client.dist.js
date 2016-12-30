@@ -54,5 +54,5 @@ module.exports = (appPath, port) => ({
         })
     ],
     resolve: common.resolve
-    // externals: ["react", /^@angular\//],  尝试把react单独已js引用到html中，看看是否可以减小体积
+    // externals: ['react'] // 尝试把react单独已js引用到html中，看看是否可以减小体积
 })

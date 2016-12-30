@@ -11,19 +11,24 @@ import 'babel-polyfill'
 import React from 'react'
 import { render } from 'react-dom'
 
+import { Provider } from 'react-redux'
+
 // TODO: 在生成环境移除这个组件
 // import { AppContainer as HotContainer } from 'react-hot-loader'
 // import Root from './containers/Root'
-import { browserHistory, match } from 'react-router'
+import { Router, browserHistory, match } from 'react-router'
 // import { syncHistoryWithStore } from 'react-router-redux'
 
-import routes from './roots/routeConfig'
-
+// import routes from './roots/routeConfig'
+import routes from './roots/router'
 
 // 添加js原生扩展
 // require('../../common/ext/index')
 
-/*
+// import factoryRootReducer from '../client/roots/factoryRootReducer'
+// import factoryConfigureStore from '../client/roots/factoryConfigureStore'
+import { createConfigureStore } from '../common'
+
 
 // 用react-router-redux增强history
 // const history = syncHistoryWithStore(browserHistory, store)
@@ -37,18 +42,19 @@ match({ history, routes }, (err, redirectLocation, renderProps) => {
         console.log(err.stack)
     }
 
-    let configStore = null
+    let configStore = createConfigureStore(window.location.pathname)
 
     // 判断加载哪一个app的redux store
-    if (renderProps.routes[1] &&
-        renderProps.routes[1].path === '没找到') {
+    // if (renderProps.routes[1] &&
+    //     renderProps.routes[1].path === '没找到') {
 
-        configStore = require.ensure([], (require) => {
-            configStore = require('./roots/configStore').default
-            appRender(configStore)
-        }, 'default.redux')
-    }
+    //     configStore = require.ensure([], (require) => {
+    //         configStore = require('./roots/configStore').default
+    //         appRender(configStore)
+    //     }, 'default.redux')
+    // }
 
+    appRender(configStore)
     function appRender (configStore) {
         // const configStore = require('./roots/configStore').default
         // 获取server端写的默认state
@@ -78,4 +84,4 @@ match({ history, routes }, (err, redirectLocation, renderProps) => {
 //             root
 //         )
 //     })
-// }*/
+// }

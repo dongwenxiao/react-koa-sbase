@@ -1,8 +1,9 @@
 import path from 'path'
-import { servers, clients } from '../../config/mounting'
-import factoryRootReducer from '../client/roots/factoryRootReducer'
-import factoryConfigureStore from '../client/roots/factoryConfigureStore'
+import { servers /*, clients*/ } from '../../config/mounting'
+// import factoryRootReducer from '../client/roots/factoryRootReducer'
+// import factoryConfigureStore from '../client/roots/factoryConfigureStore'
 import clientRootRouter from '../client/roots/router'
+import { createConfigureStore } from '../common'
 
 // 自定义对原生JS对象的扩展
 require('../ext')
@@ -29,7 +30,7 @@ if (!__DEV__) {
     htmlFilename = path.resolve(global.spConfig.RUN_PATH, './dist/index.html')
 }
 
-function createConfigureStore (url) {
+/*function createConfigureStore (url) {
     // url 例如 /demo/helloworld/react
 
     // urlPrefix ——> client
@@ -65,7 +66,7 @@ function createConfigureStore (url) {
 
 
     return configureStore
-}
+}*/
 
 app.use(require('./middlewares/common/isomorphic-react-redux')(clientRootRouter, createConfigureStore, htmlFilename))
 
