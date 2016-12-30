@@ -1,5 +1,6 @@
 const initState = {
-    loading: false
+    loading: false,
+    word: ''
 }
 
 export default initState

@@ -1,8 +1,8 @@
 import initState from './initState'
-// import { reducer as loginReducer } from './login'
+import { reducer as sayReducer } from './say'
 
 const reducers = [
-    // loginReducer
+    sayReducer
 ]
 
 /**

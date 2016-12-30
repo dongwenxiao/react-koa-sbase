@@ -1,0 +1,2 @@
+export const SAY_HELLO = 'SAY_HELLO'
+export const THINK_1_SECOND = 'THTHINK_1_SECONDINK'

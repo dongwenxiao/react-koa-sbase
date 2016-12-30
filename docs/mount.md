@@ -3,36 +3,46 @@
 
 
 ## 挂载app
+
+> ```/app/index.js```<br>
+> 每个app都必须提供如下接口
+
 ```
-// 每个app都必须提供如下接口
 {
     urlPrefix,
-    redux: {
-        store,
-        reducers
+    server: {
+        router
     },
-    router: {
-        client,
-        server
+    client: {
+        router,
+        redux: {
+            reducers
+        }
     }
 }
-
-// 备注：挂载文件是根木下的mounting.js
 ```
+提供给 ```/config/mounting.js``` 使用。
 
 ## 挂载feature
+
+> ```/feature/index.js``` <br>
+> 每个feature都必须提供如下接口
 ```
-// 每个feature都必须提供如下接口
 {
     urlPrefix,
-    router: {
-        client,
-        server
+    server: {
+        router
+    },
+    client: {
+        router,
+        redux: {
+            reducers
+        }
     }
 }
-
-// 备注：挂载文件是每个app下的index.js
 ```
+提供给 ```/app/server.js``` 和 ```/app/client.js``` 使用。
+
 
 ## 备忘
 先用server和client在同一个index.js里暴露，看看打包是否会把有冗余，如果有，则把server和client的接口分别用文件暴露出来。

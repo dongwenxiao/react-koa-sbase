@@ -8,8 +8,7 @@
     },
     client: {
         redux: {
-            reducers,
-            initState
+            reducers
         },
         router
     },
