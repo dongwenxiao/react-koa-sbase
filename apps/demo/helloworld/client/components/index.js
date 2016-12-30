@@ -1,9 +1,9 @@
-import PageNotFound from './PageNotFound'
+// import PageNotFound from './PageNotFound'
 import Test from './Test'
 import SayPage from './SayPage'
 
 export {
-    PageNotFound,
+    // PageNotFound,
     Test,
     SayPage
 }
