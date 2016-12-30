@@ -1,9 +1,9 @@
-import App from './containers/App'
+// import App from './components/App'
 import { PageNotFound, Test, SayPage } from './components'
 
 export default {
     path: '', // 在feature暴露index.js里配置了
-    component: App,
+    // component: App,
     childRoutes: [
         { path: 'react', name: 'react', component: Test },
         { path: 'say', name: 'say', component: SayPage },
