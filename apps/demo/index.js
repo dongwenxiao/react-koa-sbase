@@ -19,10 +19,6 @@
 import client from './client'
 import server from './server'
 
-// TODO  ./redux
-// client.redux.store = {}
-
-
 const urlPrefix = 'demo'
 
 // 设置client router urlPrefix
