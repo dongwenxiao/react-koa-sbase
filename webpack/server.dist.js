@@ -17,10 +17,11 @@ const nodeModules = () => fs
 
 module.exports = (appPath) => ({
     target: 'async-node',
-    devtool: 'cheap-eval-source-map',
+    // devtool: 'cheap-eval-source-map',
     watch: false,
     entry: [
-        path.resolve(appPath, './base/server')
+        // path.resolve(appPath, './test-server')
+        path.resolve(appPath, './example/server')
     ],
     output: {
         filename: 'index.js',

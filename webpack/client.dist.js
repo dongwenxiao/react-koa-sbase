@@ -19,7 +19,8 @@ module.exports = (appPath, port) => ({
     target: 'web',
     devtool: 'source-map',
     entry: [
-        path.resolve(appPath, './base/client/index.js')
+        // path.resolve(appPath, './test-client')
+        path.resolve(appPath, './example/client')
     ],
     output: {
         filename: 'client.js',

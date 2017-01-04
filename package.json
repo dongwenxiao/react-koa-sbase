@@ -1,8 +1,8 @@
 {
-  "name": "super_project",
+  "name": "react-koa-sbase",
   "version": "0.0.1",
-  "description": "fullstack framework",
-  "author": "dongwenxiao.com",
+  "description": "fullstack framework base",
+  "author": "dongwenxiao",
   "email": "cs_victor@126.com",
   "main": "index.js",
   "scripts": {
@@ -14,21 +14,22 @@
     "client-dev": "node ./webpack/enter --stage client --env dev",
     "server-dev": "node ./webpack/enter --stage server --env dev",
     "server-run": "node ./dist/server",
-
+    
     "server-dist": "NODE_ENV=production node ./webpack/enter --stage server --env dist",
     "client-dist": "NODE_ENV=production node ./webpack/enter --stage client --env dist",
 
-    "server-dist-run": "npm run clean-dist && npm run server-dist && npm run copy-html && npm run server-run"
+    "server-dist-run": "npm run clean-dist && npm run server-dist && npm run server-run"
   },
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://git.coding.net/cs_victor/super_project.git"
+    "url": "https://github.com/dongwenxiao/superproject"
   },
   "keywords": [
     "es6/7",
     "fullstack",
     "react",
+    "react-server-render",
     "react-router",
     "redux",
     "koa2",
