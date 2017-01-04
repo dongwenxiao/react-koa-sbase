@@ -4,7 +4,6 @@
   "description": "fullstack framework base",
   "author": "dongwenxiao",
   "email": "cs_victor@126.com",
-  "main": "index.js",
   "scripts": {
     "start": "npm run clean-dist && npm run client-dist && npm run server-dist && npm run copy-html && npm run server-run",
     
@@ -14,7 +13,7 @@
     "client-dev": "node ./webpack/enter --stage client --env dev",
     "server-dev": "node ./webpack/enter --stage server --env dev",
     "server-run": "node ./dist/server",
-    
+
     "server-dist": "NODE_ENV=production node ./webpack/enter --stage server --env dist",
     "client-dist": "NODE_ENV=production node ./webpack/enter --stage client --env dist",
 
