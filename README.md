@@ -1,13 +1,5 @@
 # Superproject
 
-## core
-
-```
-middlewares
-routers - features
-modules
-```
-
 ## 独白
 
 > 技术是用来解决问题的 <br>
@@ -16,6 +8,14 @@ modules
 > 不断的解决问题...生产问题...再解决..再生产... <br>
 > It's my life. <br>
 
+## 核心扩展
+
+```
+middlewares [client|server]
+routers [client|server] - features
+modules [client|server]
+```
+
 ## 运行
 
 建议：中国用户建议使用cnpm加速下载依赖
@@ -23,14 +23,14 @@ modules
 npm i cnpm -g
 ```
 
-如果安装了cnpm可以把👇的```npm i```改成```cnpm i```执行
-
+如果安装了cnpm可以把👇的```npm i```改成```cnpm i```执行<br>
+运行example
 ```
 cd superproject && npm i
 npm start
 ```
 
-在浏览器打开：```http://localhost:3000```
+在浏览器打开：```http://localhost:3000/about```
 
 ## 技术栈(计划使用)
 
@@ -59,53 +59,25 @@ HTTP反向代理 - Nginx <br>
 代码管理 - Git <br>
 持续集成 - Jenkins <br>
 
-## 目录结构
+## 接口
+
+> Client
 
 ```
-superproject
-	|
-	+---apps
-	|	|
-	|	+---app
-	|		|
-	|		+---feature
-	|			|
-	|			+---client
-	|			|	|
-	|			|	+---redux
-	|			|	|
-	|			|	+---componets
-	|			|
-	|			+---server
-	|
-	+---base
-	| 	|
-	| 	+---client
-	| 	|	|
-	| 	|	+---containers
-	| 	|	|
-	| 	|	+---roots
-	| 	|
-	| 	+---server
-	| 		|
-	| 		+---middlewares
-	| 		|
-	| 		+---modules
-	| 		|
-	| 		+---public
-	| 		|
-	| 		+---app.js
-	| 		|
-	| 		+---server.js
-	|
-	+---webpack
-	|
-	+---config
-	|
-	+---logs
-	|
-	+---dist
-	|
-	+---package.json
+import { redux, router, createConfigureStore, run } from 'superproject/client'
 
+client.redux.use() redux中间件
+client.redux.reducer.use() redux的reducer挂载
+client.router.use() react-router挂载
+client.run()
+```
+
+> Server
+
+```
+import { middleware, router, commonMiddlewares, run } from 'superproject/server'
+
+server.middleware.use() koa-middleware中间件
+server.router.use() koa-router挂载
+server.run()
 ```

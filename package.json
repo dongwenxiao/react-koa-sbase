@@ -1,7 +1,7 @@
 {
   "name": "react-koa-sbase",
   "version": "0.0.1",
-  "description": "fullstack framework base",
+  "description": "fullstack framework, superproject base.",
   "author": "dongwenxiao",
   "email": "cs_victor@126.com",
   "scripts": {
