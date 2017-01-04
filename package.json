@@ -22,7 +22,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dongwenxiao/superproject"
+    "url": "https://github.com/dongwenxiao/react-koa-sbase"
   },
   "keywords": [
     "es6/7",
