@@ -1,4 +1,4 @@
-import { middleware, router, run, commonMiddlewares } from '../super-base/server'
+import { middleware, router, run, commonMiddlewares } from '../server'
 import { router as reactRouter, createConfigureStore } from './client'
 
 // koa middleware
