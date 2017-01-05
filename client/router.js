@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { ImportStyleRoot } from 'react-import-style'
 
 let rootRouter = null
 
@@ -15,6 +16,7 @@ export const init = () => {
     return rootRouter
 }
 
+@ImportStyleRoot()
 class App extends Component {
     render () {
         return (

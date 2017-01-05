@@ -1,6 +1,6 @@
 {
   "name": "react-koa-sbase",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "fullstack framework, superproject base.",
   "author": "dongwenxiao",
   "email": "cs_victor@126.com",
@@ -39,7 +39,7 @@
     "socket.io"
   ],
   "engines": {
-    "node": "^6.7.0"
+    "node": ">=6.7.0"
   },
   "babel": {
     "presets": [
