@@ -6,6 +6,7 @@
 ## 扩展点
 
 > Client 可以扩展
+
 ```
 redux middleware
 
@@ -13,7 +14,9 @@ redux reducer
 
 react router
 ```
+
 > Server 可以扩展
+
 ```
 koa middleware
 
