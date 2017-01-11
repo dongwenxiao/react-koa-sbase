@@ -22,7 +22,7 @@
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/dongwenxiao/react-koa-sbase"
+    "url": "https://github.com/dongwenxiao/sp-base"
   },
   "keywords": [
     "es6/7",
