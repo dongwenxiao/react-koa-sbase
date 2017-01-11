@@ -49,6 +49,11 @@ server.run() // 运行服务端
 
 ## 相关扩展（无链接表示未完成）
 
+例子|说明
+----|----
+[sp-boilerplate](https://github.com/dongwenxiao/sp-boilerplate)|Superproject 项目示例
+
+
 核心基础|说明
 ----|----
 [sp-base](https://github.com/dongwenxiao/sp-base)|Superproject基础代码
