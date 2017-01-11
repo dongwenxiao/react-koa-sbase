@@ -1,36 +1,82 @@
-# React-Koa-SBase [Superproject Base]
+# sp-base [Superproject core]
 
-## 独白
+> ```Superproject``` 是基于 ```React``` + ```Koa``` 全栈技术框架。<br>
+> ```sp-base``` 是实现Superproject的基础代码，提供了启动程序和可扩展接口。
 
-> 技术是用来解决问题的 <br>
-> 所以技术框架是要解决一系列问题的 ... <br>
-> 往往在解决问题的过程中又产生了新的问题，所以... <br>
-> 不断的解决问题...生产问题...再解决..再生产... <br>
-> It's my life. <br>
+## 扩展点
 
-## 核心扩展
-
+> Client 可以扩展
 ```
-middlewares [client|server]
-routers [client|server] - features
-modules [client|server]
-```
+redux middleware
 
-## 运行
+redux reducer
 
-建议：中国用户建议使用cnpm加速下载依赖
+react router
 ```
-npm i cnpm -g
+> Server 可以扩展
+```
+koa middleware
+
+koa router
 ```
 
-如果安装了cnpm可以把👇的```npm i```改成```cnpm i```执行<br>
-运行example
+
+## 接口使用
+
+> Client
+
 ```
-cd superproject && npm i
-npm start
+import { redux, router, createConfigureStore, run } from 'superproject/client'
+
+client.redux.use() // redux中间件
+client.redux.reducer.use() // redux的reducer挂载
+client.router.use() // react-router挂载
+client.run() // 运行客户端
 ```
 
-在浏览器打开：```http://localhost:3000/about```
+> Server
+
+```
+import { middleware, router, commonMiddlewares, run } from 'superproject/server'
+
+server.middleware.use() // koa-middleware中间件
+server.router.use() // koa-router挂载
+server.run() // 运行服务端
+```
+
+## 相关（无链接表示未完成）
+
+核心基础|说明
+----|----
+[sp-base](https://github.com/dongwenxiao/sp-base)|Superproject基础代码
+
+工具|说明
+----|----
+[sp-css-loader](https://github.com/dongwenxiao/sp-css-loader)|处理组件化样式的webpack loader，可与file-loader配合使用
+
+
+服务端中间件(Koa)|说明
+----|----
+[sp-react-isomorphic](https://github.com/dongwenxiao/sp-react-isomorphic)|React（Redux）同构Koa中间件
+
+
+模块 | 说明
+----|----
+[sp-css-import](https://github.com/dongwenxiao/sp-css-import) | 辅助sp-css-loader加载样式
+sp-email|发邮件
+sp-sms|发短信
+sp-mongo|mongodb 操作
+sp-qiniu|七牛存储操作
+
+
+功能|说明
+----|----
+sp-wx|微信相关功能
+sp-cms|cms系统功能
+sp-api|api接口生成
+sp-schedule|时间表、计划任务
+sp-auth|权限管理
+
 
 ## 技术栈(计划使用)
 
@@ -58,52 +104,3 @@ HTTP反向代理 - Nginx <br>
 
 代码管理 - Git <br>
 持续集成 - Jenkins <br>
-
-## 接口
-
-> Client
-
-```
-import { redux, router, createConfigureStore, run } from 'superproject/client'
-
-client.redux.use() redux中间件
-client.redux.reducer.use() redux的reducer挂载
-client.router.use() react-router挂载
-client.run()
-```
-
-> Server
-
-```
-import { middleware, router, commonMiddlewares, run } from 'superproject/server'
-
-server.middleware.use() koa-middleware中间件
-server.router.use() koa-router挂载
-server.run()
-```
-
-
-## 相关
-
-> 服务端中间件(Koa)
-
-Middleware | Description
-----|------
-[react-isomorphic-koa-middleware](https://github.com/dongwenxiao/react-isomorphic-koa-middleware) | React在服务端渲染的中间件
-
-
-> 客户端中间件(React)
-
-Hoc：High Order Component 高级组件
-
-Hoc | Description
-----|------|----
-[react-import-style](https://github.com/dongwenxiao/react-import-style) | 辅助组件加载样式
-
-
-> webpack-loader
-
-Loader | Description
-----|------|----
-[wrapper-css-loader](https://github.com/dongwenxiao/wrapper-css-loader) | 把css外包一层class，避免命名冲突
-
