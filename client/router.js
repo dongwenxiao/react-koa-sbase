@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { ImportStyleRoot } from 'react-import-style'
+import { ImportStyleRoot } from 'sp-css-import'
 
 let rootRouter = null
 
