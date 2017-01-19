@@ -22,8 +22,9 @@ export const router = {
     }
 }
 
-export const run = () => {
-    createServer(app).listen(3000)
+const DEFAULT_PORT = 3000
+export const run = (port = DEFAULT_PORT) => {
+    createServer(app).listen(port)
 }
 
 export const commonMiddlewares = require('./common/middlewares')
