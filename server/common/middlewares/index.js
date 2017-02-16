@@ -7,6 +7,7 @@ module.exports = function (app) {
     // option.configStore
 
     app.use(require('./response-time'))
+    app.use(require('./sp-response'))
     // app.use(require('./logger'))
     app.use(require('./session'))
     app.use(require('./bodyparser'))

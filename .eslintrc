@@ -408,7 +408,7 @@
     // 强制使用命名的 function 表达式
     "func-names": 0,
     // 文件末尾强制换行
-    "eol-last": 2,
+    "eol-last": 0,
     "indent": [
       2,
       4,
@@ -591,7 +591,7 @@
     ],
     // 强制在 function的左括号之前使用一致的空格
     "space-before-function-paren": [
-      2,
+      0,
       "always"
     ],
     // 强制在圆括号内使用一致的空格
