@@ -73,17 +73,17 @@ server.run() // 运行服务端
 [sp-css-import](https://github.com/dongwenxiao/sp-css-import) | 辅助sp-css-loader加载样式
 sp-email|发邮件
 sp-sms|发短信
-sp-mongo|mongodb 操作
+[sp-mongo](https://github.com/dongwenxiao/sp-mongo)|mongodb 操作对象
 sp-qiniu|七牛存储操作
 
 
 功能|说明
 ----|----
 sp-wx|微信相关功能
-sp-cms|cms系统功能
-sp-api|api接口生成
+[sp-cms](https://github.com/dongwenxiao/sp-cms)|cms模块功能
+[sp-api](https://github.com/dongwenxiao/sp-api)|api接口生成
 sp-schedule|时间表、计划任务
-sp-auth|权限管理
+[sp-auth](https://github.com/dongwenxiao/sp-auth)|权限管理+登录
 
 
 ## 技术栈(计划使用)
@@ -95,7 +95,7 @@ sp-auth|权限管理
 Style导入 - wapper-css-loader <br>
 打包工具 - webpack2 <br>
 组件库 - Material-UI <br>
-CSS编译 - Sass <br>
+CSS编译 - Less \ CSS <br>
 ES6\7编译 - Babel <br>
 
 单元测试 - Mocha <br>
@@ -112,3 +112,15 @@ HTTP反向代理 - Nginx <br>
 
 代码管理 - Git <br>
 持续集成 - Jenkins <br>
+
+
+## 约定
+
+> Server API Response
+```
+{
+    "code": 200, // 类似 HTTP Status Code
+    "data": [], // or {}
+    "msg": "返回提示语"
+}
+```
