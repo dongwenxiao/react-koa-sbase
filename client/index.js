@@ -29,6 +29,7 @@ export const redux = {
 
     reducer: {
         use: (name, reducer) => {
+            rootReducer.init()
             rootReducer.add(name, reducer)
         }
     }

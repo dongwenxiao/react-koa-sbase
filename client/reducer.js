@@ -5,29 +5,29 @@ export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE'
 let rootReducer = null
 
 export const init = () => {
+
     if (!rootReducer) {
         rootReducer = createRootReducer()
-    }
-    return rootReducer
-}
 
-function createRootReducer() {
-    return {
-        lang: (state, action) => {
+        // 默认添加一个读取语言的reducer
+        add('lang', (state = 'en', action) => {
             switch (action.type) {
                 case CHANGE_LANGUAGE:
                     return action.data
                 default:
-                    return 'en'
+                    return state
             }
-
-        }
-
+        })
     }
+
+    return rootReducer
+}
+
+function createRootReducer() {
+    return {}
 }
 
 export const add = (name, reducer) => {
-    init()
 
     let extendReducer = {}
     extendReducer[name] = reducer
@@ -36,7 +36,4 @@ export const add = (name, reducer) => {
     return rootReducer
 }
 
-export const get = () => {
-    // if (!rootReducer) return null
-    return combineReducers(rootReducer)
-}
+export const get = () => combineReducers(rootReducer)
