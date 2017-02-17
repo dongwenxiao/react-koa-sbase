@@ -65,7 +65,7 @@ export const run = () => {
 
     // react-router
     const routes = rootRouter.get()
-        // 用react-router-redux增强history
+    // 用react-router-redux增强history
     const history = syncHistoryWithStore(browserHistory, store)
 
     match({ history, routes }, (err, redirectLocation, renderProps) => {
@@ -74,12 +74,10 @@ export const run = () => {
             console.log(err.stack)
         }
 
-        render( <
-            Provider store = { store } >
-            <
-            Router history = { history } > { routes } <
-            /Router> <
-            /Provider>,
+        render(
+            <Provider store={store} >
+                <Router history={history} > {routes} </Router>
+            </Provider>,
             document.getElementById('root')
         )
     })
