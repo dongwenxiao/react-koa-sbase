@@ -11,6 +11,7 @@ import * as rootRouter from './router'
 import * as reduxMiddleware from './middleware'
 import { factoryConfigureStore } from './configureStore'
 
+
 /*
 import { redux, router, run } from 'superproject/client'
 client.redux.use() redux中间件
@@ -19,6 +20,7 @@ client.router.use() react-router挂载
 client.run()
 */
 
+export const CHANGE_LANGUAGE = rootReducer.CHANGE_LANGUAGE
 
 export const redux = {
     use: (middleware) => {
@@ -63,7 +65,7 @@ export const run = () => {
 
     // react-router
     const routes = rootRouter.get()
-    // 用react-router-redux增强history
+        // 用react-router-redux增强history
     const history = syncHistoryWithStore(browserHistory, store)
 
     match({ history, routes }, (err, redirectLocation, renderProps) => {
@@ -72,12 +74,12 @@ export const run = () => {
             console.log(err.stack)
         }
 
-        render(
-            <Provider store={store}>
-                <Router history={history}>
-                    {routes}
-                </Router>
-            </Provider>,
+        render( <
+            Provider store = { store } >
+            <
+            Router history = { history } > { routes } <
+            /Router> <
+            /Provider>,
             document.getElementById('root')
         )
     })
