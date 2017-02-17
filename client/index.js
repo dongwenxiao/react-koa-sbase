@@ -75,8 +75,10 @@ export const run = () => {
         }
 
         render(
-            <Provider store={store} >
-                <Router history={history} > {routes} </Router>
+            <Provider store={store}>
+                <Router history={history}>
+                    {routes}
+                </Router>
             </Provider>,
             document.getElementById('root')
         )
