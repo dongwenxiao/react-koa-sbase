@@ -5,6 +5,7 @@ server.router.use() koa-router挂载
 server.run()
 */
 
+export commonMiddlewares from './common/middlewares'
 
 const createServer = require('./server')
 const app = require('./app')
@@ -26,5 +27,3 @@ const DEFAULT_PORT = 3000
 export const run = (port = DEFAULT_PORT) => {
     createServer(app, { port }).listen(port)
 }
-
-export const commonMiddlewares = require('./common/middlewares')
