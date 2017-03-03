@@ -21,6 +21,7 @@ client.run()
 */
 
 export const CHANGE_LANGUAGE = rootReducer.CHANGE_LANGUAGE
+export const TELL_ME_URL = rootReducer.TELL_ME_URL
 
 export const redux = {
     use: (middleware) => {
