@@ -36,12 +36,21 @@ export const redux = {
     }
 }
 
+
+// 扩展客户端路由属性
+let __ext = {}
 export const router = {
     use: (router) => {
         rootRouter.add(router)
     },
-    get: () => rootRouter.get()
+    get: () => rootRouter.get(),
+
+    // 扩展客户端路由
+    ext: (ext) => {
+        Object.assign(__ext, ext)
+    }
 }
+
 
 export const createConfigureStore = () => {
     const reducers = rootReducer.get()
@@ -76,9 +85,12 @@ export const run = () => {
             console.log(err.stack)
         }
 
+        console.log('__ext===========')
+        console.log(__ext)
+
         render(
             <Provider store={store}>
-                <Router history={history}>
+                <Router history={history} {...__ext}>
                     {routes}
                 </Router>
             </Provider>,

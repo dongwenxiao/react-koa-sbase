@@ -1,6 +1,6 @@
 {
   "name": "sp-base",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "Superproject is react + koa framework, sp-base is core code.",
   "author": "dongwenxiao",
   "email": "cs_victor@126.com",
