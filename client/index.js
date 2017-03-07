@@ -85,9 +85,6 @@ export const run = () => {
             console.log(err.stack)
         }
 
-        console.log('__ext===========')
-        console.log(__ext)
-
         render(
             <Provider store={store}>
                 <Router history={history} {...__ext}>
