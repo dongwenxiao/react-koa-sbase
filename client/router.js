@@ -1,35 +1,32 @@
 import React, { Component } from 'react'
 import { ImportStyleRoot } from 'sp-css-import'
 
-let rootRouter = null
+// react-router 的根路由结点
+export let rootRouter = null
 
-export const init = () => {
-
-    if (!rootRouter) {
-        rootRouter = {
-            path: '/',
-            component: App,
-            childRoutes: []
-        }
-    }
-
-    return rootRouter
-}
-
-@ImportStyleRoot()
-class App extends Component {
-    render () {
-        return (
-            <div>{this.props.children}</div>
-        )
-    }
-}
-
+// 添加react router
 export const add = (router) => {
     init()
     rootRouter.childRoutes.push(router)
+
+    /**
+     * 初始化react root router
+     *
+     * @returns root router
+     */
+    function init() {
+        if (!rootRouter) {
+            rootRouter = {
+                path: '/',
+                component: App,
+                childRoutes: []
+            }
+        }
+        return rootRouter
+    }
 }
 
+// 获取已挂载的react router
 export const get = () => {
     let routes = [rootRouter]
     routes.forEach(handleIndexRoute)
@@ -37,12 +34,22 @@ export const get = () => {
 }
 
 
-// 处理默认路由
+// TODO 把根样式的处理移动到sp-boilerplate的App里，显示处理
+@ImportStyleRoot()
+class App extends Component {
+    render() {
+        return (
+            <div>{this.props.children}</div>
+        )
+    }
+}
 
-// Handle isIndex property of route config:
-//  1. remove the first child with isIndex=true from childRoutes
-//  2. assign it to the indexRoute property of the parent.
-function handleIndexRoute (route) {
+/**
+ * 处理默认路由
+ *
+ * @param {any} route
+ */
+function handleIndexRoute(route) {
     if (!route.childRoutes || !route.childRoutes.length) {
         return
     }
