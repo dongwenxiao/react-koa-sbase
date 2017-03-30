@@ -5,9 +5,6 @@ require('babel-polyfill')
 // 前后端同构使用统一的fetch数据方式
 require('isomorphic-fetch')
 
-// 注册 koa 应用相关逻辑`
-// const app = require('./app')
-
 
 /*
  * 创建一个被扩展的http服务
