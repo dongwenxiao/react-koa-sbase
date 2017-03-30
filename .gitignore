@@ -1,15 +1,9 @@
-# super project
+# nodes projects
 node_modules/
 *.log
 dist
 
 
-# apps
-#apps/[^.]*
-#apps/!__react_isomorphic_tpl
-
-
-# victor's personal code
-victor
+# personal code
 .DS_Store
 .vscode
