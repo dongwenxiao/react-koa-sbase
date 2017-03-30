@@ -1,11 +1,11 @@
+// React
 import React from 'react'
 import { render } from 'react-dom'
-// import thunk from 'redux-thunk'
 import { browserHistory, match, Router } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { Provider } from 'react-redux'
 
-
+// Redux
 import * as rootReducer from './reducer'
 import * as rootRouter from './router'
 import * as reduxMiddleware from './middleware'
@@ -58,21 +58,16 @@ export const createConfigureStore = () => {
     return factoryConfigureStore(reducers, middlewares)
 }
 
-// export const configureStore = createConfigureStore()
-
 export const run = () => {
 
     // redux
-    // const reducers = rootReducer.get()
-    // const middlewares = reduxMiddleware.get()
-    // const configureStore = factoryConfigureStore(reducers, middlewares)
     const configureStore = createConfigureStore()
+    // __REDUX_STATE__ 是与服务端约定好的存储redux数据对象
     const store = configureStore(window.__REDUX_STATE__)
 
     // 默认添加的redux中间件
     // redux.use(thunk)
     // redux.use(routerMiddleware(browserHistory))
-
 
     // react-router
     const routes = rootRouter.get()
@@ -80,11 +75,9 @@ export const run = () => {
     const history = syncHistoryWithStore(browserHistory, store)
 
     match({ history, routes }, (err, redirectLocation, renderProps) => {
-
         if (err) {
             console.log(err.stack)
         }
-
         render(
             <Provider store={store}>
                 <Router history={history} {...__ext}>
