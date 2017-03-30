@@ -21,31 +21,16 @@
   "engines": {
     "node": ">=7.6.0"
   },
-  "babel": {
-    "presets": [
-      "react",
-      ["es2015", { "modules": false }],
-      "stage-0"
-    ],
-    "compact": false,
-    "plugins": [
-      "react-hot-loader/babel",
-      "transform-decorators-legacy",
-      "transform-regenerator"
-    ]
-  },
   "dependencies": {
-    "react": "~15.4.1",
-    "react-dom": "~15.4.1",
-    "react-router": "~3.0.0",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-router": "^3.0.0",
 
-    "redux": "~3.6.0",
-    "redux-thunk": "~2.1.0",
-    "react-redux": "~4.4.6",
-    "react-router-redux": "~4.0.7",
+    "redux": "^3.6.0",
+    "redux-thunk": "^2.2.0",
+    "react-redux": "^4.4.6",
+    "react-router-redux": "^4.0.8",
 
-    "koa": "~2.0.0-alpha.7",
-
-    "yargs": "~6.0.0"
+    "koa": "^2.2.0"
   }
 }
