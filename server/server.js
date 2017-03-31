@@ -1,11 +1,3 @@
-
-// 处理es6\es7
-require('babel-polyfill')
-
-// 前后端同构使用统一的fetch数据方式
-require('isomorphic-fetch')
-
-
 /*
  * 创建一个被扩展的http服务
  *
