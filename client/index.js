@@ -11,6 +11,8 @@ import * as rootRouter from './router'
 import * as reduxMiddleware from './middleware'
 import { factoryConfigureStore } from './configureStore'
 
+import { update as realtimeLocationUpdate } from './realtime-location/api.js'
+
 
 /*
 import { redux, router, run } from 'superproject/client'
@@ -58,7 +60,11 @@ export const createConfigureStore = () => {
     return factoryConfigureStore(reducers, middlewares)
 }
 
-export const run = () => {
+export const run = (settings = {}) => {
+
+    let options = Object.assign({
+        // (function) browserHistoryOnUpdate
+    }, settings)
 
     // redux
     const configureStore = createConfigureStore()
@@ -70,6 +76,10 @@ export const run = () => {
     // redux.use(routerMiddleware(browserHistory))
 
     // react-router
+    browserHistory.listen(location => {
+        store.dispatch(realtimeLocationUpdate(location))
+        if (typeof options.browserHistoryOnUpdate === 'function') options.browserHistoryOnUpdate(location)
+    })
     const routes = rootRouter.get()
     // 用react-router-redux增强history
     const history = syncHistoryWithStore(browserHistory, store)

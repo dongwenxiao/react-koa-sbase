@@ -1,7 +1,9 @@
 import { combineReducers } from 'redux'
+import realtimeLocationReducer from './realtime-location/reducer.js'
 
 export const CHANGE_LANGUAGE = 'CHANGE_LANGUAGE'
 export const TELL_ME_URL = 'TELL_ME_URL'
+export const LOCATION_UPDATE = 'LOCATION_UPDATE'
 
 let rootReducer = null
 
@@ -25,6 +27,9 @@ export const init = () => {
                     return state
             }
         })
+
+        // 默认添加实时react-router location的reducer
+        add('location', realtimeLocationReducer)
     }
 
     return rootReducer
